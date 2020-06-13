@@ -4,31 +4,21 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
 
 
-// var numeroCasuale = Math.floor((Math.random() * 100) + 1);
-// var numeroCasuale2 = Math.floor((Math.random() * 100) + 1);
-// var numeroCasuale3 = Math.floor((Math.random() * 100) + 1);
-// var numeroCasuale4 = Math.floor((Math.random() * 100) + 1);
-// var numeroCasuale5 = Math.floor((Math.random() * 100) + 1);
-
-// var alert = alert('eccoti 5 numeri da ricordare ' + numeroCasuale + ' ' + numeroCasuale2 + ' ' + numeroCasuale3 + ' ' + numeroCasuale4 + ' ' + numeroCasuale5);
-
-
-// console.log(numeroCasuale);
-// console.log(numeroCasuale2);
-// console.log(numeroCasuale3);
-// console.log(numeroCasuale4);
-// console.log(numeroCasuale5);
-
-
-
+// ((verificaNumero && verificaNumero2 && verificaNumero3 && verificaNumero4) || 
+//     (verificanumero && verificaNumero2 && verificaNumero3 && verificaNumero5) || (verificaNumero2, verificaNumero3)
 
 var arrayNumeri = [];
 
-for (var i = 0; i < 5; i++ ) {
+while (arrayNumeri.length < 5) {
 
     var numeroCasuale = Math.floor((Math.random() * 100) + 1);
-    
-    arrayNumeri.push(numeroCasuale);
+
+    if(controllaSeNumeroPresente(numeroCasuale, arrayNumeri) === false) {
+        arrayNumeri.push(numeroCasuale);
+        
+    } else {
+        console.log('numerotrovato!')
+    }
    
 }
 
@@ -58,20 +48,37 @@ setTimeout(function() {
         alert('bravo ti sei ricordato tutti i numeri');
     } else alert('mi dispiace non hai ricordato tutti i numeri');
 
-    
 
 }
 , 30000);
 
 
+// funzione che controlla su un numero è presente in array e risponde vero se è presente e falso se non è presente
+function controllaSeNumeroPresente(numeroUtente, arrayNumeri) {
 
-// var numeroUtente2 = parseInt(prompt('inserisci un numero'));
+    var presenzaNumero = false;
 
-// var numeroUtente3 = parseInt(prompt('inserisci un numero'));
+    for (var i = 0; i < arrayNumeri.length; i++) {
 
-// var numeroUtente4 = parseInt(prompt('inserisci un numero'));
+        var numeroCorrente = arrayNumeri[i];
 
-// var numeroUtente5 = parseInt(prompt('inserisci un numero'));
+        if (numeroUtente === numeroCorrente) {
+            presenzaNumero = true;
+        }
+    }
 
-// ((verificaNumero && verificaNumero2 && verificaNumero3 && verificaNumero4) || 
-//     (verificanumero && verificaNumero2 && verificaNumero3 && verificaNumero5) || (verificaNumero2, verificaNumero3)
+    return presenzaNumero;
+}
+
+
+
+/////// questi sono appunti
+
+// var prova = controllaSeNumeroPresente(numeroUtente, arrayNumeri);
+// console.log(prova);
+
+// var controllaNumero = controllaSeNumeroPresente(numeroUtente, arrayNumeri);
+    
+// for (var i = 0; i < arrayNumeri.length; i++) {
+//     controllaSeNumeroPresente(numeroUtente, arrayNumeri)
+// }
