@@ -49,6 +49,7 @@ setTimeout(function() {
     //     alert('bravo ti sei ricordato tutti i numeri');
     // } else alert('mi dispiace non hai ricordato tutti i numeri');
 
+
     if ((controllaSeNumeroPresente(numeroUtente, arrayNumeri) === true)) {
         nuovoArray.push(numeroUtente);
     } 
@@ -72,23 +73,23 @@ setTimeout(function() {
 
 
     if (nuovoArray.length === 5) {
-        alert('bravo hai ricordato tutti i numeri');
+        alert('bravo hai ricordato tutti i numeri ' + 'I numeri che hai ricordato sono ' + nuovoArray);
     
     } else if (nuovoArray.length === 4) {
     
-        alert('hai ricordato 4 numeri');
+        alert('hai ricordato 4 numeri ' + 'I numeri che hai ricordato sono ' + nuovoArray);
     
     } else if (nuovoArray.length === 3) {
     
-        alert('hai ricordato 3 numeri');
+        alert('hai ricordato 3 numeri ' + 'I numeri che hai ricordato sono ' + nuovoArray);
     
     } else if (nuovoArray.length === 2) {
     
-        alert('hai ricordato 2 numeri');
+        alert('hai ricordato 2 numeri ' + 'I numeri che hai ricordato sono ' + nuovoArray);
     
     } else if (nuovoArray.length === 1) {
     
-        alert('hai ricordato solamente un numero :(');
+        alert('hai ricordato solamente un numero :( ' + 'I numeri che hai ricordato sono ' + nuovoArray);
     }
 
 
