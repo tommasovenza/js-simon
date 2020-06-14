@@ -4,9 +4,6 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati
 
 
-// ((verificaNumero && verificaNumero2 && verificaNumero3 && verificaNumero4) || 
-//     (verificanumero && verificaNumero2 && verificaNumero3 && verificaNumero5) || (verificaNumero2, verificaNumero3)
-
 var arrayNumeri = [];
 
 while (arrayNumeri.length < 5) {
@@ -27,76 +24,45 @@ alert('eccoti 5 numeri da ricordare ' + arrayNumeri);
 var nuovoArray = [];
 
 setTimeout(function() {
-    var numeroUtente = parseInt(prompt('inserisci un numero'));
-    var numeroUtente2 = parseInt(prompt('inserisci un numero'));
-    var numeroUtente3 = parseInt(prompt('inserisci un numero'));
-    var numeroUtente4 = parseInt(prompt('inserisci un numero'));
-    var numeroUtente5 = parseInt(prompt('inserisci un numero'));
 
-    console.log(numeroUtente);
-    console.log(numeroUtente2);
-    console.log(numeroUtente3);
-    console.log(numeroUtente4);
-    console.log(numeroUtente5);
+    for (var i = 0; i < 5; i ++) {
 
-    // var verificaNumero = arrayNumeri.includes(numeroUtente);
-    // var verificaNumero2 = arrayNumeri.includes(numeroUtente2);
-    // var verificaNumero3 = arrayNumeri.includes(numeroUtente3);
-    // var verificaNumero4 = arrayNumeri.includes(numeroUtente4);
-    // var verificaNumero5 = arrayNumeri.includes(numeroUtente5);
-
-    // if(verificaNumero && verificaNumero2 && verificaNumero3 && verificaNumero4 && verificaNumero5) {
-    //     alert('bravo ti sei ricordato tutti i numeri');
-    // } else alert('mi dispiace non hai ricordato tutti i numeri');
-
-
-    if ((controllaSeNumeroPresente(numeroUtente, arrayNumeri) === true)) {
-        nuovoArray.push(numeroUtente);
-    } 
-    if ((controllaSeNumeroPresente(numeroUtente2, arrayNumeri) === true)) {
-        nuovoArray.push(numeroUtente2);
+        var numeroUtente = parseInt(prompt('inserisci un numero'));
+        if ((controllaSeNumeroPresente(numeroUtente, arrayNumeri) === true)) {
+            nuovoArray.push(numeroUtente);
+        } 
     }
-    
-    if ((controllaSeNumeroPresente(numeroUtente3, arrayNumeri) === true)) {
-        nuovoArray.push(numeroUtente3);
-    }
-
-    if ((controllaSeNumeroPresente(numeroUtente4, arrayNumeri) === true)) {
-        nuovoArray.push(numeroUtente4);
-    }
-
-    if ((controllaSeNumeroPresente(numeroUtente5, arrayNumeri) === true)) {
-        nuovoArray.push(numeroUtente5);
-    } 
     
     console.log(nuovoArray.length);
 
 
     if (nuovoArray.length === 5) {
-        alert('bravo hai ricordato tutti i numeri ' + 'I numeri che hai ricordato sono ' + nuovoArray);
+        alert('bravo hai ricordato tutti i numeri. ' 
+        + ' I numeri che hai ricordato sono ' + nuovoArray);
     
     } else if (nuovoArray.length === 4) {
     
-        alert('hai ricordato 4 numeri ' + 'I numeri che hai ricordato sono ' + nuovoArray);
+        alert('hai ricordato 4 numeri. ' 
+        + ' I numeri che hai ricordato sono ' + nuovoArray);
     
     } else if (nuovoArray.length === 3) {
     
-        alert('hai ricordato 3 numeri ' + 'I numeri che hai ricordato sono ' + nuovoArray);
+        alert('hai ricordato 3 numeri. ' 
+        + ' I numeri che hai ricordato sono ' + nuovoArray);
     
     } else if (nuovoArray.length === 2) {
     
-        alert('hai ricordato 2 numeri ' + 'I numeri che hai ricordato sono ' + nuovoArray);
+        alert('hai ricordato 2 numeri. ' 
+        + ' I numeri che hai ricordato sono ' + nuovoArray);
     
     } else if (nuovoArray.length === 1) {
     
-        alert('hai ricordato solamente un numero :( ' + 'I numeri che hai ricordato sono ' + nuovoArray);
+        alert('hai ricordato solamente un numero. :( ' 
+        + ' I numeri che hai ricordato sono ' + nuovoArray);
     }
 
 
 }, 30000);
-
-
-
 
 
 
